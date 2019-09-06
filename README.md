@@ -62,6 +62,8 @@ Here are the predictions on some of the raw images that were not used to generat
 <b>Figure 9</b>: This is a really interesting one; there are many Waldo lookalikes, but only one real (as described in the text on the image). The agent obviously did not find him because he is not trained to do that in this manner.
 </p>
 Looking at the stairs on the heatmap in __Figure 9__ we see an interesting pattern; the Waldos that take of their hats are not recognized by the agent. 
+
+
 ## Other resources
 * To get a real grip around convolutional neural networks, I recommend [this medium article](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53 "A Comprehensive Guide to Convolutional Neural Networks — the ELI5 way").
 * I also recommend reading the [article](http://cs231n.github.io/convolutional-networks/ "CS231n Convolutional Neural Networks for Visual Recognition") from Stanford that I reffered to earlier in this README.
