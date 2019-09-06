@@ -47,7 +47,7 @@ When measuring training- and testing results it is important to have a clear bou
 Here are the predictions on some of the raw images that were not used to generate training data:
 <p align='center'>
 <img width="50%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/5.jpg"><br>
-<b>Figure 6</b>: training- and validation loss and accuracy for each epoch
+<b>Figure 6</b>: the agent is able to find Waldo in this image
 </p><br><br>
 <p align='center'>
 <img width="50%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/10.jpg"><br>
