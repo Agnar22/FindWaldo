@@ -84,7 +84,7 @@ def locate(img, filepath="Data/Raw/Train/"):
     # Image.fromarray(coloured_heat).show()
     # if random.randint(0, 10) < 1:
     #     store_image('Data/Raw/Train/'+img, img, i, j)
-    return data
+    return data, heatmap
 
 
 def color_gray(image, heatmap, gray):
@@ -100,16 +100,18 @@ def color_gray(image, heatmap, gray):
 for img in os.listdir("Data/Raw/Test/"):
     print(img)
     try:
-        annotated = locate(img, filepath="Data/Raw/Test/")
-        Image.fromarray(annotated).show()
-        plt.title("Augmented")
-        plt.imshow(annotated)
-        plt.show()
+        annotated, heatmap = locate(img, filepath="Data/Raw/Test/")
+        # Image.fromarray(annotated).show()
+        Image.fromarray(annotated).save("README/" + img)
+        Image.fromarray(heatmap).save("README/heat" + img)
+        # plt.title("Augmented")
+        # plt.imshow(annotated)
+        # plt.show()
     except Exception as e:
         print('exception', e)
 
 # Predict a specific image
-annotated = locate('14.jpg')
+annotated, heatmap = locate('16t.jpg', filepath="Data/Raw/Test/")
 Image.fromarray(annotated).show()
 print(annotated.shape[:2])
 plt.title("Augmented")
