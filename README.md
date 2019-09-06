@@ -44,7 +44,10 @@ The problem with a standard convolutional neural network in this context __fig__
 When measuring training- and testing results it is important to have a clear boundary between what is considered training- and testing data. The raw images where divided into two groups where one of the groups were used to generate the training data (extracting Waldo heads and pasting them on random 64x64 cutouts of the original images, as described under __data labeling__) while the other were used to demonstrate the accuracy of the agent. This separation is vital, as a leakage of the same Waldo heads from training to testing data would give a false sense of accuracy.
 
 Here are the predictions on some of the raw images that were not used to generate training data:
-
+<p align='center'>
+<img width="80%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/5.jpg"><br>
+<b>Figure 1</b>: training- and validation loss and accuracy for each epoch
+</p>
 
 
 ## Other resources
