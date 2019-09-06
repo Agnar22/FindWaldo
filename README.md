@@ -46,10 +46,22 @@ When measuring training- and testing results it is important to have a clear bou
 Here are the predictions on some of the raw images that were not used to generate training data:
 <p align='center'>
 <img width="80%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/5.jpg"><br>
-<b>Figure 1</b>: training- and validation loss and accuracy for each epoch
+<b>Figure 6</b>: training- and validation loss and accuracy for each epoch
 </p>
-
-
+<p align='center'>
+<img width="80%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/10.jpg"><br>
+<b>Figure 7</b>: here it actually finds Walda, Waldo is down to the left.
+</p>
+<p align='center'>
+<img width="80%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/8.jpg"><br>
+<b>Figure 8</b>: several persons are marked here; Waldo, Walda and some of the kids. This is not a bug, its a feature!
+</p>
+<p align='center'>
+<img width="80%" src="https://github.com/Agnar22/FindWaldo/blob/master/Data/Raw/Test/16t.jpg"><br>
+<img width="80%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/16t.jpg"><br>
+<b>Figure 9</b>: This is a really interesting one; there are many Waldo lookalikes, but only one real (as described in the text on the image). The agent obviously did not find him because he is not trained to do that in this manner.
+</p>
+Looking at the stairs on the heatmap in __Figure 9__ we see an interesting pattern; the Waldos that take of their hats are not recognized by the agent. 
 ## Other resources
 * To get a real grip around convolutional neural networks, I recommend [this medium article](https://towardsdatascience.com/a-comprehensive-guide-to-convolutional-neural-networks-the-eli5-way-3bd2b1164a53 "A Comprehensive Guide to Convolutional Neural Networks — the ELI5 way").
 * I also recommend reading the [article](http://cs231n.github.io/convolutional-networks/ "CS231n Convolutional Neural Networks for Visual Recognition") from Stanford that I reffered to earlier in this README.
