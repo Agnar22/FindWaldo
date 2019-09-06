@@ -60,7 +60,7 @@ Here are the predictions on some of the raw images that were not used to generat
 <p align='center'>
 <img width="50%" src="https://github.com/Agnar22/FindWaldo/blob/master/Data/Raw/Test/16t.jpg"><br>
 <img width="50%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/16t.jpg"><br>
-<b>Figure 9</b>: This is a really interesting one; there are many Waldo lookalikes,<br> but only one real (as described in the text on the image). The agent obviously did not find him because <br> he is not trained to do that in this manner.
+<b>Figure 9</b>: This is a really interesting one; there are many Waldo lookalikes,<br> but only one real (as described in the text on the image). The agent obviously<br> did not find him because he is not trained to do that in this manner.
 </p>
 Looking at the stairs on the heatmap in <b>Figure 9</b> we see an interesting pattern; the Waldos that take of their hats are not recognized by the agent. 
 
