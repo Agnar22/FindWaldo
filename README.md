@@ -26,6 +26,7 @@ The naive approach to this problem is supervised learning with conv-nets: you la
 Despite these problems, the approach taken in this repo was quite similar to the supervised learning approach described above. However, the data labeling and the construction of the neural network was carried out differently, and exactly how this was done is what I am going to explain to you next.
 
 __Data labeling__
+
 First and foremost, 59 finding waldo images where marked like this __Fig__ and erased from the image __fig__. Then, by carefully extracting his head you can now easily generate a lot of fake "finding Waldo" images.
 
 The idea is that there are always one recurring element in the "finding Waldo" images: they all contain Waldos head! This might seem obious, but the crucial part is that the rest of him is not always shown in the images, thus it is not useful to mark his entire body. Marking his entire body could also make the neural network overfit due to the fact that in the images where you see his entire body, he is often not wearing the same clothes __fig__ __fig__.
