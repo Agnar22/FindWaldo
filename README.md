@@ -62,11 +62,9 @@ Here are the predictions on some of the raw images that were not used to generat
 <img width="50%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/16t.jpg"><br>
 <b>Figure 9</b>: an image with only one real Waldo an the corresponding heatmap<br> from the agent.
 </p>
-The Waldo image from <b>Figure 9</b> is an interesting one; there are many Waldo lookalikes, but only one real (as described in the text on the image). The agent obviously did not find him because he is not trained to do that in this manner, but we clearly see that it marks the Waldos. Additionally, looking at the stairs in the middle on the heatmap, we see an interesting pattern; the Waldos that take of their hats are not recognized by the agent. 
+The Waldo image from <b>Figure 9</b> is an interesting one; there are many Waldo lookalikes, but only one real (as described in the text on the image). The agent obviously did not find him because he is not trained to do that in this manner, but we clearly see that it marks the Waldos. Additionally, looking at the stairs in the middle on the heatmap, we see an interesting pattern; the Waldos that take of their hats are not recognized by the agent. This is of course a direct consequence of the training, where the agent is only trained to find Waldo wearing a hat.
 
 As you can see the agent is able to find Waldo or something that might resemble him and I would therefore call it a success.
-
-
 
 
 ## Other resources
