@@ -42,7 +42,7 @@ The problem with a standard convolutional neural network in this context __fig__
 
 ## Results
 
-When measuring training- and testing results it is important to have a clear boundary between what is considered training- and testing data. The raw images where divided into two groups where one of the groups were used to generate the training data (extracting Waldo heads and pasting them on random 64x64 cutouts of the original images, as described under __data labeling__) while the other were used to demonstrate the accuracy of the agent. This separation is vital, as a leakage of the same Waldo heads from training to testing data would give a false sense of accuracy.
+When measuring training- and testing results it is important to have a clear boundary between what is considered training- and testing data. The raw images where divided into two groups where one of the groups were used to generate the training data (extracting Waldo heads and pasting them on random 64x64 cutouts of the original images, as described under __Data labeling__) while the other were used to demonstrate the accuracy of the agent. This separation is vital, as a leakage of the same Waldo heads from training to testing data would give a false sense of accuracy.
 
 Here are the predictions on some of the raw images that were not used to generate training data:
 <p align='center'>
@@ -58,7 +58,7 @@ Here are the predictions on some of the raw images that were not used to generat
 <b>Figure 8</b>: several persons are marked here; Waldo, Walda and some of the kids.<br> This is not a bug, its a feature!
 </p><br><br>
 <p align='center'>
-<img width="25%" src="https://github.com/Agnar22/FindWaldo/blob/master/Data/Raw/Test/16t.jpg"><br><img width="25%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/16t.jpg"><br>
+<img width="40%" src="https://github.com/Agnar22/FindWaldo/blob/master/Data/Raw/Test/16t.jpg"><br><img width="40%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/16t.jpg"><br>
 <b>Figure 9</b>: an image with lots of Waldo look alikes and the corresponding heatmap<br> from the agent.
 </p>
 The Waldo image from <b>Figure 9</b> is an interesting one; there are many Waldo lookalikes, but only one real (as described in the text on the image). The agent obviously did not find him because he is not trained to do that in this manner, but we clearly see that it marks the Waldos. Additionally, looking at the stairs in the middle on the heatmap, we see an interesting pattern; the Waldos that take of their hats are not recognized by the agent. This is of course a direct consequence of the training, where the agent is only trained to find Waldo wearing a hat.
