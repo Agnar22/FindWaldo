@@ -45,7 +45,12 @@ To avoid overfitting, his head was randomly tilted, scaled and placed on a backg
 
 __The Neural Network__
 
-The problem with a standard convolutional neural network in this context __fig__ is that the input must be of a fixed size. This poses a problem for us because our "finding Waldo" images are of different sizes. To solve this, the fully connected layers were converted to convolutional layers. *Say whaaat!?* This is all explained in [this article](http://cs231n.github.io/convolutional-networks/#convert "CS231n Convolutional Neural Networks for Visual Recognition") from Stanford. The advantage of this is that the network now accepts all images that have dimentions 64x64 pixels or larger. This allows us to have 64x64 images to train on, and then be able to scale it up to larger images later on when we want the agent to really find Waldo. Thus the task of finding Waldo has now been reduced to a binary classification task for images. *Whew.*
+<p align='center'>
+<img width="50%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/CnnArchitecture.png"><br>
+<b>Figure 2</b>: the agent is able to find Waldo in this image
+</p>
+
+The problem with a standard convolutional neural network in this context __figure 2__ is that the input must be of a fixed size. This poses a problem for us because our "finding Waldo" images are of different sizes. To solve this, the fully connected layers were converted to convolutional layers. *Say whaaat!?* This is all explained in [this article](http://cs231n.github.io/convolutional-networks/#convert "CS231n Convolutional Neural Networks for Visual Recognition") from Stanford. The advantage of this is that the network now accepts all images that have dimentions 64x64 pixels or larger. This allows us to have 64x64 images to train on, and then be able to scale it up to larger images later on when we want the agent to really find Waldo. Thus the task of finding Waldo has now been reduced to a binary classification task for images. *Whew.*
 
 
 ## Results
@@ -55,21 +60,21 @@ When measuring training- and testing results it is important to have a clear bou
 Here are the predictions on some of the raw images that were not used to generate training data:
 <p align='center'>
 <img width="50%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/5.jpg"><br>
-<b>Figure 6</b>: the agent is able to find Waldo in this image
+<b>Figure 3</b>: the agent is able to find Waldo in this image
 </p><br><br>
 <p align='center'>
 <img width="50%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/10.jpg"><br>
-<b>Figure 7</b>: here it actually finds Walda, Waldo is down to the left.
+<b>Figure 4</b>: here it actually finds Walda, Waldo is down to the left.
 </p><br><br>
 <p align='center'>
 <img width="50%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/8.jpg"><br>
-<b>Figure 8</b>: several persons are marked here; Waldo, Walda and some of the kids.<br> This is not a bug, its a feature!
+<b>Figure 5</b>: several persons are marked here; Waldo, Walda and some of the kids.<br> This is not a bug, its a feature!
 </p><br><br>
 <p align='center'>
 <img width="40%" src="https://github.com/Agnar22/FindWaldo/blob/master/Data/Raw/Test/16t.jpg"><br><img width="40%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/16t.jpg"><br>
-<b>Figure 9</b>: an image with lots of Waldo look alikes and the corresponding heatmap<br> from the agent.
+<b>Figure 6</b>: an image with lots of Waldo look alikes and the corresponding heatmap<br> from the agent.
 </p>
-The Waldo image from <b>Figure 9</b> is an interesting one; there are many Waldo lookalikes, but only one real (as described in the text on the image). The agent obviously did not find him because he is not trained to do that in this manner, but we clearly see that it marks the Waldos. Additionally, looking at the stairs in the middle on the heatmap, we see an interesting pattern; the Waldos that take of their hats are not recognized by the agent. This is of course a direct consequence of the training, where the agent is only trained to find Waldo wearing a hat.
+The Waldo image from <b>Figure 6</b> is an interesting one; there are many Waldo lookalikes, but only one real (as described in the text on the image). The agent obviously did not find him because he is not trained to do that in this manner, but we clearly see that it marks the Waldos. Additionally, looking at the stairs in the middle on the heatmap, we see an interesting pattern; the Waldos that take of their hats are not recognized by the agent. This is of course a direct consequence of the training, where the agent is only trained to find Waldo wearing a hat.
 
 As you can see the agent is able to find Waldo or something that might resemble him, therefore I would call it a success.
 
