@@ -47,7 +47,7 @@ __The Neural Network__
 
 <p align='center'>
 <img width="50%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/CnnArchitecture.png"><br>
-<b>Figure 2</b>: the agent is able to find Waldo in this image
+<b>Figure 2</b>: depiction of a typical convnet architecture
 </p>
 
 The problem with a standard convolutional neural network in this context __figure 2__ is that the input must be of a fixed size. This poses a problem for us because our "finding Waldo" images are of different sizes. To solve this, the fully connected layers were converted to convolutional layers. *Say whaaat!?* This is all explained in [this article](http://cs231n.github.io/convolutional-networks/#convert "CS231n Convolutional Neural Networks for Visual Recognition") from Stanford. The advantage of this is that the network now accepts all images that have dimentions 64x64 pixels or larger. This allows us to have 64x64 images to train on, and then be able to scale it up to larger images later on when we want the agent to really find Waldo. Thus the task of finding Waldo has now been reduced to a binary classification task for images. *Whew.*
