@@ -1,5 +1,5 @@
 # FindWaldo
-<div> Have you ever struggled to find Waldo <img width="20px" src="https://github.com/Agnar22/FindWaldo/blob/master/Data/Clean/OnlyWaldoHeads/9.png">? This agent does it effortlessly for you!
+<div> Have you ever struggled to find <img width="20px" src="https://github.com/Agnar22/FindWaldo/blob/master/Data/Clean/OnlyWaldoHeads/9.png">? This agent does it effortlessly for you!
 </div>
 
 
