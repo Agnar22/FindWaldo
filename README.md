@@ -1,6 +1,6 @@
 # FindWaldo
-Have you ever struggled to find Waldo? This agent does it effortlessly for you!
-
+<div>Have you ever struggled to find Waldo <img width="3%" src="https://github.com/Agnar22/FindWaldo/blob/master/Data/Clean/OnlyWaldoHeads/9.png">? This agent does it effortlessly for you!
+</div>
 ## Installation
 Clone the repository
 ```bash
