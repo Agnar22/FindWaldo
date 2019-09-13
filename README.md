@@ -37,7 +37,7 @@ First and foremost, Waldo was found and cleared from 59 "finding Waldo" images. 
 <b>Figure 1</b>: Left) Classic Waldo with the stripy shirt and blue jeans. Right) Waldo with extra gear
 </p>
 
-The idea is that there are always one recurring element in the "finding Waldo" images: they all contain Waldos head! This might seem obious, but the crucial part is that the rest of him is not always shown in the images, thus it is not useful to mark his entire body. Marking his entire body could also make the neural network overfit due to the fact that in the images where you see his entire body, he is often not wearing the same clothes, as shown in __figure 1__.
+The idea is that there are always one recurring element in the "finding Waldo" images: they all contain Waldos head! This might seem obious, but the crucial part is that the rest of him is not always shown in the images, thus it is not useful to mark his entire body. Marking his entire body could also make the neural network overfit due to the fact that in the images where you see his entire body, he is often not wearing the same clothes, as shown in __Figure 1__.
 
 To avoid overfitting, his head was randomly tilted, scaled and placed on a background. By having half of the images without his head, we now have a method of generating a large dataset of labeled "finding Waldo" images without too much trouble.
 
@@ -52,7 +52,7 @@ To avoid overfitting, his head was randomly tilted, scaled and placed on a backg
 
 __The Neural Network__
 
-The problem with a standard convolutional neural network in this context (__figure 2__) is that the input must be of a fixed size. This poses a problem for us because our "finding Waldo" images are of different sizes. To solve this, the fully connected layers were converted to convolutional layers. *Say whaaat!?* This is all explained in [this article](http://cs231n.github.io/convolutional-networks/#convert "CS231n Convolutional Neural Networks for Visual Recognition") from Stanford. The advantage of this is that the network now accepts all images that have dimentions 64x64 pixels or larger. This allows us to have 64x64 images to train on, and then be able to scale it up to larger images later on when we want the agent to really find Waldo. Thus the task of finding Waldo has now been reduced to a binary classification task for images. *Whew.*
+The problem with a standard convolutional neural network (__Figure 2__), in this context, is that the input must be of a fixed size. This poses a problem for us because our "finding Waldo" images are of different sizes. To solve this, the fully connected layers were converted to convolutional layers. *Say whaaat!?* This is all explained in [this article](http://cs231n.github.io/convolutional-networks/#convert "CS231n Convolutional Neural Networks for Visual Recognition") from Stanford. The advantage of this is that the network now accepts all images that have dimentions 64x64 pixels or larger. This allows us to have 64x64 images to train on, and then be able to scale it up to larger images later on when we want the agent to really find Waldo. Thus the task of finding Waldo has now been reduced to a binary classification task for images. *Whew.*
 
 
 ## Results
