@@ -70,7 +70,7 @@ Here are the predictions on some of the raw images that were not used to generat
 </p><br><br>
 <p align='center'>
 <img width="50%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/8.jpg"><br>
-<b>Figure 5</b>: several persons are marked here; Waldo, Walda and some of the kids.<br> This is not a bug, its a feature!
+<b>Figure 5</b>: several persons are marked here; Waldo, Walda and some of the kids.<br> This is not a bug, it's a feature!
 </p><br><br>
 <p align='center'>
 <img width="45%" src="https://github.com/Agnar22/FindWaldo/blob/master/Data/Raw/Test/16t.jpg"><img width="45%" src="https://github.com/Agnar22/FindWaldo/blob/master/READMEImages/16t.jpg"><br>
