@@ -37,7 +37,7 @@ First and foremost, Waldo was found and cleared from 59 "finding Waldo" images. 
 <b>Figure 1</b>: Left) Classic Waldo with the stripy shirt and blue jeans. Right) Waldo with extra gear
 </p>
 
-The idea is that there are always one recurring element in the "finding Waldo" images: they all contain Waldos head! This might seem obious, but the crucial part is that the rest of him is not always shown in the images, thus it is not useful to mark his entire body. Marking his entire body could also make the neural network overfit due to the fact that in the images where you see his entire body, he is often not wearing the same clothes, as shown in __Figure 1__.
+The idea is that there are always one recurring element in the "finding Waldo" images: they all contain Waldos head! This might seem obvious, but the crucial part is that the rest of him is not always shown in the images, thus it is not useful to mark his entire body. Marking his entire body could also make the neural network overfit due to the fact that in the images where you see his entire body, he is often not wearing the same clothes, as shown in __Figure 1__.
 
 To avoid overfitting, his head was randomly tilted, scaled and placed on a background. By having half of the images without his head, we now have a method of generating a large dataset of labeled "finding Waldo" images without too much trouble.
 
