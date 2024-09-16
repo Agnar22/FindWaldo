@@ -50,14 +50,12 @@ def store_image(path, name, x, y):
 # Locate waldo in image
 def locate(img, filepath="Data/Raw/Train/"):
     num_sub_img = 100
-    data = cv2.cvtColor(cv2.imread(filepath + img), cv2.COLOR_BGR2RGB)
+    original_image = cv2.cvtColor(cv2.imread(filepath + img), cv2.COLOR_BGR2RGB).astype(np.uint8)
+    data = np.array(original_image)
     gray = cv2.cvtColor(cv2.imread(filepath + img), cv2.COLOR_BGR2GRAY)
     coloured_heat = cv2.cvtColor(gray, cv2.COLOR_GRAY2RGB)
 
     heatmap = heatmodel.predict(data.reshape(1, data.shape[0], data.shape[1], data.shape[2]))
-    plt.imshow(heatmap[0, :, :, 0])
-    plt.title("Heatmap")
-    plt.show()
 
     # Show 95 certainty heatmap and grayscale->color
     # plt.imshow(heatmap[0, :, :, 0] > 0.95, cmap="gray")
@@ -75,16 +73,23 @@ def locate(img, filepath="Data/Raw/Train/"):
     # for i, j in chosen_sub_images:
     #     store_image('Data/Raw/Train/' + img, img, int(i*3),int(j*3)))
 
+    data_marked = np.array(data)
+
     for i, j in zip(x, y):
         y_pos = j * 3
         x_pos = i * 3
-        cv2.rectangle(data, (x_pos, y_pos), (x_pos + 64, y_pos + 64), (0, 0, 255), 5)
+        cv2.rectangle(data_marked, (x_pos, y_pos), (x_pos + 64, y_pos + 64), (0, 0, 255), 5)
+    marker_opacity = 0.6
+    data = data_marked.astype(np.float64) * marker_opacity + data.astype(np.float64) * (1 - marker_opacity)
+    orig_size = tuple(reversed(original_image.shape[:2]))
+    data = cv2.resize(data.astype(np.uint8), orig_size)
 
     coloured_heat = coloured_heat.astype(np.uint8)
     # Image.fromarray(coloured_heat).show()
     # if random.randint(0, 10) < 1:
     #     store_image('Data/Raw/Train/'+img, img, i, j)
-    return data, heatmap
+    heatmap = cv2.normalize(cv2.resize(cv2.cvtColor(heatmap[0], cv2.COLOR_GRAY2BGR), orig_size), None, 0, 255, cv2.NORM_MINMAX).astype(np.uint8)
+    return original_image, data, heatmap
 
 
 def color_gray(image, heatmap, gray):
@@ -98,22 +103,8 @@ def color_gray(image, heatmap, gray):
 
 # Predict all test images
 for img in os.listdir("Data/Raw/Test/"):
-    print(img)
     try:
-        annotated, heatmap = locate(img, filepath="Data/Raw/Test/")
-        # Image.fromarray(annotated).show()
-        Image.fromarray(annotated).save("README/" + img)
-        Image.fromarray(heatmap).save("README/heat" + img)
-        # plt.title("Augmented")
-        # plt.imshow(annotated)
-        # plt.show()
+        image, annotated, heatmap = locate(img, filepath="Data/Raw/Test/")
+        Image.fromarray(np.hstack((image, annotated, heatmap))).show()
     except Exception as e:
         print('exception', e)
-
-# Predict a specific image
-annotated, heatmap = locate('16t.jpg', filepath="Data/Raw/Test/")
-Image.fromarray(annotated).show()
-print(annotated.shape[:2])
-plt.title("Augmented")
-plt.imshow(annotated)
-plt.show()

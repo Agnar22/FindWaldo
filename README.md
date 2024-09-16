@@ -14,9 +14,14 @@ navigate into the project folder
 cd FindWaldo
 ```
 
+install the required libraries
+```bash
+python3.10 -m pip install -r requirements.txt
+```
+
 if everything went well, you should now be able to run the code
 ```bash
-python3 kerasfindwaldo.py
+python3.10 Main.py
 ```
 
 ## Motivation
